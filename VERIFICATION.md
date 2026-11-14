@@ -5,7 +5,7 @@ Transcribed from both original JPEGs in `images/`. Those JPEGs are not loaded by
 Owner confirmation before release:
 
 - [ ] **Plain Rice: Rs. 770.** This is what the first JPEG prints; confirm that this unusual price is intentional.
-- [ ] **Phone number conflict:** main menu prints +92 329 6574787; deals menu prints 0329-6574781. No phone number is displayed until confirmed.
+- [x] Owner confirmed **0329 6574787** on 15 November 2026. Displayed as the restaurant enquiry number with a `tel:+923296574787` link. The conflicting number on the older deals JPEG is not used.
 - [ ] **Pasta naming:** standalone menu says “Alfredo Chicken Cheese”; the deals say “Alfredo Chicken Cheese Pasta”. Both source versions are retained.
 - [ ] **Pasta Lover Deal:** source says “1x Fried Momos (6 pcs) OR Soup”, without a soup type. The website preserves the choice without inventing a soup.
 - [ ] Confirm menu is current and printed deal prices remain valid. No validity dates appear on the source.

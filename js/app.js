@@ -37,6 +37,12 @@ function section(name,items,id,special=false){
  const grid=el('div','grid');items.forEach(item=>grid.append(card(item,special)));section.append(grid);return section;
 }
 function renderBranches(restaurant) {
+ const contact=$('restaurant-contact');
+ if(restaurant?.phone && /^\+?[0-9]{7,15}$/.test(restaurant.phone)){
+  const call=el('a','',restaurant.phoneDisplay || restaurant.phone);
+  call.href='tel:'+restaurant.phone;call.setAttribute('aria-label','Call Rabi Chinese at '+(restaurant.phoneDisplay || restaurant.phone));
+  contact.replaceChildren(document.createTextNode('Restaurant enquiries: '),call);contact.hidden=false;
+ }
  const branches=restaurant?.branches || [];
  if(!branches.length)return;
  $('branch-list').replaceChildren(...branches.map((branch,index)=>{
