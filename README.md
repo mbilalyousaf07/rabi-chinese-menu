@@ -75,3 +75,7 @@ The argument must be the real public deployed HTTPS URL. The script rejects HTTP
 ## Photo maintenance
 
 `data/image-selections.json` is the reviewed photo manifest: 46 distinct sources, licensing, crop settings and selection notes. `python scripts/download-images.py` downloads/crops these photos and writes full/mobile WebP copies; requires Pillow and network access. `python scripts/update-photo-data.py` updates menu image fields, deal galleries and the generated credits page. Original downloads are cached only in ignored `test-results/photo-sources/`. `scripts/create-data.py` records the initial transcription and reapplies reviewed photos; avoid running it after editing menu text/prices unless you intend to regenerate the original transcription.
+
+## Restaurant logo
+
+`assets/images/logoimage.jpeg` is the actual logo supplied by the restaurant owner. It is displayed intact in the header and footer and used as the browser icon. Its original white background and proportions are preserved. It is separate from the representative food-photo licenses.
