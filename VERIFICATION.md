@@ -34,3 +34,5 @@ No text was illegible. “Fish Cracker” remains in Soup because that is where 
 - [ ] Check physical Safari/Chrome devices on a slow mobile connection. Automated emulation does not replace these checks.
 
 Deployment approval does not resolve menu content questions above. Source values remain unchanged.
+
+- [ ] Confirm whether the second branch is spelled ?Muslin Town? (as supplied) or ?Muslim Town?, and provide its street address if it should appear. The second branch currently shows only its supplied area and Lahore.

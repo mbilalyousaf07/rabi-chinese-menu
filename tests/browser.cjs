@@ -19,7 +19,7 @@ const server=http.createServer((req,res)=>{
  const page=await browser.newPage({viewport:{width:1440,height:1000}});page.on('pageerror',e=>errors.push(e.message));
  await page.goto(url);await page.waitForSelector('.food-card');
  assert.equal(await page.locator('.food-card').count(),52);assert.equal(await page.locator('.special .food-card').count(),6);
- assert.equal(await page.locator('.menu-group').count(),7);assert.match(await page.locator('.special .price').last().innerText(),/Rs. 2,260/);assert.match(await page.locator('#category-starter').innerText(),/6 pcs/);
+ assert.equal(await page.locator('.menu-group').count(),7);assert.equal(await page.locator('.branch-card').count(),2);assert.match(await page.locator('#branches').innerText(),/Faisal Town/);assert.match(await page.locator('#branches').innerText(),/Muslin Town/);assert.match(await page.locator('.special .price').last().innerText(),/Rs. 2,260/);assert.match(await page.locator('#category-starter').innerText(),/6 pcs/);
  // Force all lazy assets to load to verify every card image.
  await page.locator('img').evaluateAll(images=>images.forEach(image=>image.loading='eager'));
  await page.waitForFunction(()=>[...document.images].every(i=>i.complete&&i.naturalWidth>0));
@@ -27,6 +27,7 @@ const server=http.createServer((req,res)=>{
  const sources=await page.locator('.menu-group:not(.special) .food-photo img').evaluateAll(images=>images.map(i=>i.getAttribute('src')));
  assert.equal(new Set(sources).size,46);
  fs.mkdirSync(path.join(root,'test-results'),{recursive:true});
+ await page.locator('#branches').screenshot({path:path.join(root,'test-results/branches.png')});
  await page.locator('#category-soup').screenshot({path:path.join(root,'test-results/soup-cards.png')});
  await page.locator('#special-deals').screenshot({path:path.join(root,'test-results/deal-panels.png')});
  await page.locator('#special-deals .food-card').last().scrollIntoViewIfNeeded();

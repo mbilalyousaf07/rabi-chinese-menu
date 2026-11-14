@@ -36,6 +36,17 @@ function section(name,items,id,special=false){
  if(special)section.append(el('p','special-intro','More to share. More to savour. Explore our special deals.'));
  const grid=el('div','grid');items.forEach(item=>grid.append(card(item,special)));section.append(grid);return section;
 }
+function renderBranches(restaurant) {
+ const branches=restaurant?.branches || [];
+ if(!branches.length)return;
+ $('branch-list').replaceChildren(...branches.map((branch,index)=>{
+  const card=el('article','branch-card');
+  card.append(el('span','branch-number',String(index+1).padStart(2,'0')),el('h3','',branch.name),el('p','branch-city',branch.city));
+  if(branch.address)card.append(el('p','branch-address',branch.address));
+  (branch.amenities || []).forEach(amenity=>card.append(el('span','branch-amenity',amenity)));
+  return card;
+ }));
+}
 function render(){
  if(!menu)return;
  const results=selectMenu(menu,active,$('search').value);const fragment=document.createDocumentFragment();
@@ -54,7 +65,7 @@ async function load(){
  $('load-error').hidden=true;$('result-status').textContent='Loading the menu…';
  try {
  const response=await fetch(new URL('../data/menu.json',import.meta.url));if(!response.ok)throw new Error('Menu request failed');
- const data=await response.json();if(!validMenu(data))throw new Error('Invalid menu data');menu=data;
+ const data=await response.json();if(!validMenu(data))throw new Error('Invalid menu data');menu=data;renderBranches(menu.restaurant);
  const filters=[{id:'all',name:'Full menu'},{id:'deals',name:'✦ Special Deals'},...menu.categories];
  $('categories').replaceChildren(...filters.map(c=>{const button=el('button','',c.name);button.type='button';button.dataset.category=c.id;button.addEventListener('click',()=>{active=c.id;render();});return button;}));render();
  }catch(error){$('menu-content').replaceChildren();$('categories').replaceChildren();$('empty').hidden=true;$('load-error').hidden=false;$('result-status').textContent='Menu unavailable.';console.error(error);}

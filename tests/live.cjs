@@ -9,7 +9,7 @@ if(!url||!url.startsWith('https://'))throw new Error('Pass the deployed HTTPS UR
   const page=await browser.newPage();const errors=[];page.on('pageerror',e=>errors.push(e.message));
   const response=await page.goto(url,{waitUntil:'networkidle'});assert.equal(response.status(),200);
   await page.waitForSelector('.food-card');assert.equal(await page.locator('.food-card').count(),52);
-  assert.equal(await page.locator('.special .food-card').count(),6);
+  assert.equal(await page.locator('.special .food-card').count(),6);assert.equal(await page.locator('.branch-card').count(),2);
   await page.locator('img').evaluateAll(images=>images.forEach(i=>i.loading='eager'));
   await page.waitForFunction(()=>[...document.images].every(i=>i.complete&&i.naturalWidth>0));
   assert.equal(await page.locator('.photo-panel').count(),6);

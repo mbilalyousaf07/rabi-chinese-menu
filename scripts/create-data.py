@@ -74,6 +74,9 @@ deals=[
  deal('deal-4','Deal 4: Pasta & Chowmein Combo','2 persons',1200,1250,'pasta',['1x Alfredo Chicken Cheese Pasta','1x Rabi Special Chowmein','2x Regular Drinks']),
  deal('deal-5','Deal 5: Grand Family Feast','4–5 persons',2260,2350,'chicken',['1x Kung Pao Chicken (With Rice)','1x Chicken Chilli Dry (With Rice)','1x Rabi Special Chowmein','1x Manchurian Momos (6 pcs)','1x 1.5 Liter Drink'])]
 data={'restaurant':{'name':'Rabi Chinese','tagline':'Moments of Fire','address':'127-G Central Flats, Opposite UBL Bank, Faisal Town, Lahore'},'currency':'PKR','sources':['WhatsApp Image 2026-11-14 at 10.30.59 PM.jpeg','WhatsApp Image 2026-11-14 at 10.31.00 PM.jpeg'],'categories':categories,'deals':deals}
+# Preserve restaurant details and branch updates when regenerating source dishes.
+if (root/'data/menu.json').exists():
+ data['restaurant'].update(json.loads((root/'data/menu.json').read_text(encoding='utf-8'))['restaurant'])
 (root/'data/menu.json').write_text(json.dumps(data,indent=2,ensure_ascii=False),encoding='utf-8')
 print(sum(len(c['items']) for c in categories),'items',len(categories),'categories',len(deals),'deals')
 

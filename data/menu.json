@@ -2,7 +2,25 @@
   "restaurant": {
     "name": "Rabi Chinese",
     "tagline": "Moments of Fire",
-    "address": "127-G Central Flats, Opposite UBL Bank, Faisal Town, Lahore"
+    "address": "127-G Central Flats, Opposite UBL Bank, Faisal Town, Lahore",
+    "branches": [
+      {
+        "id": "faisal-town",
+        "name": "Faisal Town",
+        "city": "Lahore",
+        "address": "127-G Central Flats, Opposite UBL Bank, Faisal Town, Lahore",
+        "amenities": [
+          "Family hall available"
+        ]
+      },
+      {
+        "id": "muslin-town",
+        "name": "Muslin Town",
+        "city": "Lahore",
+        "address": null,
+        "amenities": []
+      }
+    ]
   },
   "currency": "PKR",
   "sources": [

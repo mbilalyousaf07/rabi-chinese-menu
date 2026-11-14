@@ -85,3 +85,7 @@ The argument must be the real public deployed HTTPS URL. The script rejects HTTP
 The 10 uploads supplied on 15 November 2026 were matched by item ID in their filenames (`gravy-1-small.jpeg` matches Chicken Manchurian, for example). The `-small` suffix is ignored when matching: both responsive sizes are generated from the new upload. Referenced deal panels use those updated dish photos too.
 
 Original uploads stay in the local ignored `assets/images/imagetoreplace/` folder. The committed manifest records the filename and SHA-256; optimized WebP filenames include a source hash to avoid stale cached images. Supplied photos are identified separately from licensed stock credits; no photographer or license is invented. To process new replacements, update their manifest entries, run `python scripts/download-images.py`, then `python scripts/update-photo-data.py`. A fresh checkout can use the committed optimized files when local upload originals are absent.
+
+## Restaurant branches
+
+The customer-facing location section lists two branches from `restaurant.branches` in `data/menu.json`: Faisal Town and Muslin Town, Lahore (the second name follows the owner's supplied spelling). Only Faisal Town has a confirmed street address and family-hall note. Add the second branch's confirmed address to its `address` field when available; no street address or phone number has been inferred. The existing permanent URL and QR serve the restaurant menu.
