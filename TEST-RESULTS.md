@@ -38,3 +38,7 @@ The permanent QR PNG is 720 ? 720 pixels and was independently decoded with ZXin
 ## Supplied replacement images ? 15 November 2026
 
 Ten uploaded files matched ten menu item IDs with no unmatched filenames. Both desktop and mobile versions were regenerated from each supplied image, with source-hash filenames for cache refresh. Referencing deal panels and credits were regenerated. User-supplied records are tested separately from stock-photo licenses. Menu text and prices remain unchanged.
+
+## Contact-details cache correction ? 15 November 2026
+
+Public HTML, JavaScript and JSON responses were checked: GitHub Pages sends `Cache-Control: max-age=600`. The live JSON contained the confirmed phone and Muslim Town address. Versioned CSS/JavaScript references and per-load uncached JSON requests were added so older resources do not hide newer menu/contact data. A refresh URL with a new HTML query is provided for existing cached tabs. Browser error/retry interception matches the new JSON query URLs.

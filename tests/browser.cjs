@@ -55,8 +55,8 @@ const server=http.createServer((req,res)=>{
  await page.goto(url);await page.waitForSelector('.food-card');await page.keyboard.press('Tab');assert.equal(await page.locator(':focus').innerText(),'Skip to menu');
  // Simulate broken images with a fresh context.
  const fail=await browser.newContext();const broken=await fail.newPage();await broken.route('**/*.webp',route=>route.abort());await broken.goto(url);await broken.waitForSelector('.image-fallback');await broken.waitForSelector('.hero-image-fallback');assert.match(await broken.locator('.image-fallback').first().innerText(),/Photo unavailable/);await fail.close();
- const recover=await browser.newContext();const errorPage=await recover.newPage();await errorPage.route('**/data/menu.json',route=>route.fulfill({status:503,body:'Unavailable'}));await errorPage.goto(url);await errorPage.locator('#load-error').waitFor({state:'visible'});
- await errorPage.unroute('**/data/menu.json');await errorPage.getByRole('button',{name:'Try again'}).click();await errorPage.waitForSelector('.food-card');assert.equal(await errorPage.locator('.food-card').count(),52);await recover.close();
+ const recover=await browser.newContext();const errorPage=await recover.newPage();await errorPage.route('**/data/menu.json*',route=>route.fulfill({status:503,body:'Unavailable'}));await errorPage.goto(url);await errorPage.locator('#load-error').waitFor({state:'visible'});
+ await errorPage.unroute('**/data/menu.json*');await errorPage.getByRole('button',{name:'Try again'}).click();await errorPage.waitForSelector('.food-card');assert.equal(await errorPage.locator('.food-card').count(),52);await recover.close();
  assert.deepEqual(errors,[]);console.log('PASS: completeness, six deals, PKR display, search, categories, reset, 7 viewport widths, iPhone/Android emulation, all local images, broken image fallback, keyboard focus, project subpath, JSON retry; zero page errors.');
  }finally{await browser.close();}
 })().catch(error=>{console.error(error);process.exitCode=1;}).finally(()=>server.close());

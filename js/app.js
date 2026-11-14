@@ -70,7 +70,10 @@ function reset(){active='all';$('search').value='';render();}
 async function load(){
  $('load-error').hidden=true;$('result-status').textContent='Loading the menu…';
  try {
- const response=await fetch(new URL('../data/menu.json',import.meta.url));if(!response.ok)throw new Error('Menu request failed');
+ const menuUrl=new URL('../data/menu.json',import.meta.url);
+ // GitHub Pages caches static responses for ten minutes; each visit needs current menu details.
+ menuUrl.searchParams.set('v',Date.now().toString());
+ const response=await fetch(menuUrl,{cache:'no-store'});if(!response.ok)throw new Error('Menu request failed');
  const data=await response.json();if(!validMenu(data))throw new Error('Invalid menu data');menu=data;renderBranches(menu.restaurant);
  const filters=[{id:'all',name:'Full menu'},{id:'deals',name:'✦ Special Deals'},...menu.categories];
  $('categories').replaceChildren(...filters.map(c=>{const button=el('button','',c.name);button.type='button';button.dataset.category=c.id;button.addEventListener('click',()=>{active=c.id;render();});return button;}));render();

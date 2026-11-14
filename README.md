@@ -91,3 +91,7 @@ Original uploads stay in the local ignored `assets/images/imagetoreplace/` folde
 The customer-facing location section lists two branches from `restaurant.branches` in `data/menu.json`: Faisal Town and Muslim Town, Lahore. Faisal Town is at 127-G Central Flats, Opposite UBL Bank; Muslim Town is on Faiz Road, opposite Swiss Girls Hostel. The family-hall note applies to Faisal Town. Both addresses were supplied by the owner. The existing permanent URL and QR serve the restaurant menu.
 
 The confirmed restaurant enquiry number is **0329 6574787**, stored in `restaurant.phone` (international format) and `restaurant.phoneDisplay` in `data/menu.json`. The branches section offers a tap-to-call link without assigning the shared enquiry number to an unconfirmed branch-specific contact.
+
+## Cache freshness
+
+GitHub Pages serves static files with a ten-minute cache lifetime. HTML references versioned CSS and JavaScript; change their version query when those files are updated. Menu JSON requests use a per-load query and `cache: no-store`, so branch details, contact information and menu data refresh on each new page load. An already open page must still be reloaded. A URL query such as `?v=20261115-contact-refresh#branches` also refreshes an older cached HTML page while keeping the canonical URL and existing QR unchanged.
