@@ -35,4 +35,4 @@ No text was illegible. “Fish Cracker” remains in Soup because that is where 
 
 Deployment approval does not resolve menu content questions above. Source values remain unchanged.
 
-- [ ] Confirm whether the second branch is spelled ?Muslin Town? (as supplied) or ?Muslim Town?, and provide its street address if it should appear. The second branch currently shows only its supplied area and Lahore.
+- [x] Second branch spelling confirmed by the owner: Muslim Town, Lahore. Its street address remains unspecified.

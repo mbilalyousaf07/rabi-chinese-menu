@@ -19,7 +19,7 @@ const server=http.createServer((req,res)=>{
  const page=await browser.newPage({viewport:{width:1440,height:1000}});page.on('pageerror',e=>errors.push(e.message));
  await page.goto(url);await page.waitForSelector('.food-card');
  assert.equal(await page.locator('.food-card').count(),52);assert.equal(await page.locator('.special .food-card').count(),6);
- assert.equal(await page.locator('.menu-group').count(),7);assert.equal(await page.locator('.branch-card').count(),2);assert.match(await page.locator('#branches').innerText(),/Faisal Town/);assert.match(await page.locator('#branches').innerText(),/Muslin Town/);assert.match(await page.locator('.special .price').last().innerText(),/Rs. 2,260/);assert.match(await page.locator('#category-starter').innerText(),/6 pcs/);
+ assert.equal(await page.locator('.menu-group').count(),7);assert.equal(await page.locator('.branch-card').count(),2);assert.match(await page.locator('#branches').innerText(),/Faisal Town/);assert.match(await page.locator('#branches').innerText(),/Muslim Town/);assert.match(await page.locator('.special .price').last().innerText(),/Rs. 2,260/);assert.match(await page.locator('#category-starter').innerText(),/6 pcs/);
  // Force all lazy assets to load to verify every card image.
  await page.locator('img').evaluateAll(images=>images.forEach(image=>image.loading='eager'));
  await page.waitForFunction(()=>[...document.images].every(i=>i.complete&&i.naturalWidth>0));
