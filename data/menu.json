@@ -1,0 +1,461 @@
+{
+  "restaurant": {
+    "name": "Rabi Chinese",
+    "tagline": "Moments of Fire",
+    "address": "127-G Central Flats, Opposite UBL Bank, Faisal Town, Lahore"
+  },
+  "currency": "PKR",
+  "sources": [
+    "WhatsApp Image 2026-11-14 at 10.30.59 PM.jpeg",
+    "WhatsApp Image 2026-11-14 at 10.31.00 PM.jpeg"
+  ],
+  "categories": [
+    {
+      "id": "gravy",
+      "name": "Gravy with Rice",
+      "items": [
+        {
+          "id": "gravy-1",
+          "name": "Chicken Manchurian",
+          "image": "assets/images/chicken.webp",
+          "price": 470,
+          "description": "Served with rice."
+        },
+        {
+          "id": "gravy-2",
+          "name": "Chicken Black Pepper",
+          "image": "assets/images/chicken.webp",
+          "price": 470,
+          "description": "Served with rice."
+        },
+        {
+          "id": "gravy-3",
+          "name": "Chicken Chilli Dry",
+          "image": "assets/images/chicken.webp",
+          "price": 590,
+          "spicy": true,
+          "description": "Served with rice."
+        },
+        {
+          "id": "gravy-4",
+          "name": "Chicken Shashlik",
+          "image": "assets/images/chicken.webp",
+          "price": 490,
+          "description": "Served with rice."
+        },
+        {
+          "id": "gravy-5",
+          "name": "Chicken Szechuan",
+          "image": "assets/images/chicken.webp",
+          "price": 480,
+          "spicy": true,
+          "description": "Served with rice."
+        },
+        {
+          "id": "gravy-6",
+          "name": "Chicken Chilli Onion",
+          "image": "assets/images/chicken.webp",
+          "price": 580,
+          "spicy": true,
+          "description": "Served with rice."
+        },
+        {
+          "id": "gravy-7",
+          "name": "Kung Pao Chicken",
+          "image": "assets/images/chicken.webp",
+          "price": 580,
+          "spicy": true,
+          "description": "Served with rice."
+        },
+        {
+          "id": "gravy-8",
+          "name": "Cashew Nut Chicken",
+          "image": "assets/images/chicken.webp",
+          "price": 580,
+          "description": "Served with rice."
+        },
+        {
+          "id": "gravy-9",
+          "name": "Almond Chicken",
+          "image": "assets/images/chicken.webp",
+          "price": 580,
+          "description": "Served with rice."
+        },
+        {
+          "id": "gravy-10",
+          "name": "Sweet & Sour Chicken",
+          "image": "assets/images/chicken.webp",
+          "price": 580,
+          "description": "Served with rice."
+        },
+        {
+          "id": "gravy-11",
+          "name": "Vegetable Chicken",
+          "image": "assets/images/chicken.webp",
+          "price": 580,
+          "description": "Served with rice."
+        },
+        {
+          "id": "gravy-12",
+          "name": "Dragon Chicken",
+          "image": "assets/images/chicken.webp",
+          "price": 580,
+          "description": "Served with rice."
+        },
+        {
+          "id": "gravy-13",
+          "name": "Oyster Chicken",
+          "image": "assets/images/chicken.webp",
+          "price": 580,
+          "description": "Served with rice."
+        },
+        {
+          "id": "gravy-14",
+          "name": "Lemon Chicken",
+          "image": "assets/images/chicken.webp",
+          "price": 580,
+          "description": "Served with rice."
+        },
+        {
+          "id": "gravy-15",
+          "name": "Green Pepper Chicken",
+          "image": "assets/images/chicken.webp",
+          "price": 490,
+          "description": "Served with rice."
+        },
+        {
+          "id": "gravy-16",
+          "name": "Honey Ginger Chicken",
+          "image": "assets/images/chicken.webp",
+          "price": 580,
+          "description": "Served with rice."
+        },
+        {
+          "id": "gravy-17",
+          "name": "Hot Garlic Chicken",
+          "image": "assets/images/chicken.webp",
+          "price": 580,
+          "spicy": true,
+          "description": "Served with rice."
+        },
+        {
+          "id": "gravy-18",
+          "name": "Shanghai Chicken",
+          "image": "assets/images/chicken.webp",
+          "price": 580,
+          "description": "Served with rice."
+        }
+      ]
+    },
+    {
+      "id": "rice",
+      "name": "Only Rice",
+      "items": [
+        {
+          "id": "rice-1",
+          "name": "Egg Fried Rice",
+          "image": "assets/images/rice.webp",
+          "price": 300
+        },
+        {
+          "id": "rice-2",
+          "name": "Vegetable Rice",
+          "image": "assets/images/rice.webp",
+          "price": 300
+        },
+        {
+          "id": "rice-3",
+          "name": "Chicken Masala Rice",
+          "image": "assets/images/rice.webp",
+          "price": 400
+        },
+        {
+          "id": "rice-4",
+          "name": "Chicken Fried Rice",
+          "image": "assets/images/rice.webp",
+          "price": 400
+        },
+        {
+          "id": "rice-5",
+          "name": "Garlic Fried Rice",
+          "image": "assets/images/rice.webp",
+          "price": 370
+        },
+        {
+          "id": "rice-6",
+          "name": "Spicy Szechuan Rice",
+          "image": "assets/images/rice.webp",
+          "price": 400,
+          "spicy": true
+        },
+        {
+          "id": "rice-7",
+          "name": "Plain Rice",
+          "image": "assets/images/rice.webp",
+          "price": 770
+        },
+        {
+          "id": "rice-8",
+          "name": "Rabi Special Rice",
+          "image": "assets/images/rice.webp",
+          "price": 470
+        },
+        {
+          "id": "rice-9",
+          "name": "Mongolian Rice",
+          "image": "assets/images/rice.webp",
+          "price": 400
+        }
+      ]
+    },
+    {
+      "id": "noodle",
+      "name": "Noodle",
+      "items": [
+        {
+          "id": "noodle-1",
+          "name": "Chicken Chowmein",
+          "image": "assets/images/noodles.webp",
+          "price": 420
+        },
+        {
+          "id": "noodle-2",
+          "name": "Vegetable Chowmein",
+          "image": "assets/images/noodles.webp",
+          "price": 390
+        },
+        {
+          "id": "noodle-3",
+          "name": "Szechuan Chicken Chowmein",
+          "image": "assets/images/noodles.webp",
+          "price": 450,
+          "spicy": true
+        },
+        {
+          "id": "noodle-4",
+          "name": "Egg Chicken Chowmein",
+          "image": "assets/images/noodles.webp",
+          "price": 450
+        },
+        {
+          "id": "noodle-5",
+          "name": "Singapore Chicken Chowmein",
+          "image": "assets/images/noodles.webp",
+          "price": 420
+        },
+        {
+          "id": "noodle-6",
+          "name": "Rabi Special Chowmein",
+          "image": "assets/images/noodles.webp",
+          "price": 490
+        }
+      ]
+    },
+    {
+      "id": "starter",
+      "name": "Starter",
+      "items": [
+        {
+          "id": "starter-1",
+          "name": "Chicken Drumstick (1 pc)",
+          "image": "assets/images/drumsticks.webp",
+          "price": 170
+        },
+        {
+          "id": "starter-2",
+          "name": "Chicken Drumstick (3 pcs)",
+          "image": "assets/images/drumsticks.webp",
+          "price": 490
+        },
+        {
+          "id": "starter-3",
+          "name": "Steam Momos",
+          "image": "assets/images/momos.webp",
+          "variants": [
+            {
+              "label": "6 pcs",
+              "price": 370
+            },
+            {
+              "label": "12 pcs",
+              "price": 700
+            }
+          ]
+        },
+        {
+          "id": "starter-4",
+          "name": "Fried Momos",
+          "image": "assets/images/momos.webp",
+          "variants": [
+            {
+              "label": "6 pcs",
+              "price": 390
+            },
+            {
+              "label": "12 pcs",
+              "price": 750
+            }
+          ]
+        },
+        {
+          "id": "starter-5",
+          "name": "Manchurian Momos",
+          "image": "assets/images/momos.webp",
+          "variants": [
+            {
+              "label": "6 pcs",
+              "price": 470
+            },
+            {
+              "label": "12 pcs",
+              "price": 900
+            }
+          ]
+        },
+        {
+          "id": "starter-6",
+          "name": "Fries",
+          "image": "assets/images/fries.webp",
+          "price": 200
+        }
+      ]
+    },
+    {
+      "id": "pasta",
+      "name": "Pasta",
+      "items": [
+        {
+          "id": "pasta-1",
+          "name": "Alfredo Chicken Cheese",
+          "image": "assets/images/pasta.webp",
+          "price": 560
+        },
+        {
+          "id": "pasta-2",
+          "name": "Chicken Macaroni",
+          "image": "assets/images/pasta.webp",
+          "price": 470
+        },
+        {
+          "id": "pasta-3",
+          "name": "Pink Cheese Pasta",
+          "image": "assets/images/pasta.webp",
+          "price": 560
+        }
+      ]
+    },
+    {
+      "id": "soup",
+      "name": "Soup",
+      "items": [
+        {
+          "id": "soup-1",
+          "name": "Hot & Sour Soup",
+          "image": "assets/images/soup.webp",
+          "price": 250
+        },
+        {
+          "id": "soup-2",
+          "name": "Corn Soup",
+          "image": "assets/images/soup.webp",
+          "price": 370
+        },
+        {
+          "id": "soup-3",
+          "name": "Egg Soup",
+          "image": "assets/images/soup.webp",
+          "price": 320
+        },
+        {
+          "id": "soup-4",
+          "name": "Fish Cracker",
+          "image": "assets/images/crackers.webp",
+          "price": 200
+        }
+      ]
+    }
+  ],
+  "deals": [
+    {
+      "id": "deal-1",
+      "name": "Deal 1: Solo Delight",
+      "serves": "1 person",
+      "price": 790,
+      "originalPrice": 820,
+      "image": "assets/images/chicken.webp",
+      "items": [
+        "1x Chicken Manchurian (With Rice)",
+        "1x Hot & Sour Soup",
+        "1x Regular Drink"
+      ]
+    },
+    {
+      "id": "pasta-lover",
+      "name": "Pasta Lover Deal",
+      "serves": "1–2 persons",
+      "price": 1470,
+      "originalPrice": 1520,
+      "image": "assets/images/pasta.webp",
+      "items": [
+        "1x Alfredo Chicken Cheese Pasta",
+        "1x Chicken Macaroni",
+        "1x Fried Momos (6 pcs) OR Soup",
+        "1x Regular Drink"
+      ]
+    },
+    {
+      "id": "deal-2",
+      "name": "Deal 2: Chowmein & Gravy Duo",
+      "serves": "2 persons",
+      "price": 1060,
+      "originalPrice": 1110,
+      "image": "assets/images/noodles.webp",
+      "items": [
+        "1x Chicken Chowmein",
+        "1x Chicken Shashlik (With Rice)",
+        "2x Regular Drinks"
+      ]
+    },
+    {
+      "id": "deal-3",
+      "name": "Deal 3: Chinese & Starter Combo",
+      "serves": "2 persons",
+      "price": 1030,
+      "originalPrice": 1070,
+      "image": "assets/images/momos.webp",
+      "items": [
+        "1x Chicken Szechuan (With Rice)",
+        "1x Fried Momos (6 pcs)",
+        "2x Regular Drinks"
+      ]
+    },
+    {
+      "id": "deal-4",
+      "name": "Deal 4: Pasta & Chowmein Combo",
+      "serves": "2 persons",
+      "price": 1200,
+      "originalPrice": 1250,
+      "image": "assets/images/pasta.webp",
+      "items": [
+        "1x Alfredo Chicken Cheese Pasta",
+        "1x Rabi Special Chowmein",
+        "2x Regular Drinks"
+      ]
+    },
+    {
+      "id": "deal-5",
+      "name": "Deal 5: Grand Family Feast",
+      "serves": "4–5 persons",
+      "price": 2260,
+      "originalPrice": 2350,
+      "image": "assets/images/chicken.webp",
+      "items": [
+        "1x Kung Pao Chicken (With Rice)",
+        "1x Chicken Chilli Dry (With Rice)",
+        "1x Rabi Special Chowmein",
+        "1x Manchurian Momos (6 pcs)",
+        "1x 1.5 Liter Drink"
+      ]
+    }
+  ]
+}
