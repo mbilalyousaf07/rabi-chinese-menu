@@ -79,3 +79,9 @@ The argument must be the real public deployed HTTPS URL. The script rejects HTTP
 ## Restaurant logo
 
 `assets/images/logoimage.jpeg` is the actual logo supplied by the restaurant owner. It is displayed intact in the header and footer and used as the browser icon. Its original white background and proportions are preserved. It is separate from the representative food-photo licenses.
+
+## Replacing dish photographs with supplied images
+
+The 10 uploads supplied on 15 November 2026 were matched by item ID in their filenames (`gravy-1-small.jpeg` matches Chicken Manchurian, for example). The `-small` suffix is ignored when matching: both responsive sizes are generated from the new upload. Referenced deal panels use those updated dish photos too.
+
+Original uploads stay in the local ignored `assets/images/imagetoreplace/` folder. The committed manifest records the filename and SHA-256; optimized WebP filenames include a source hash to avoid stale cached images. Supplied photos are identified separately from licensed stock credits; no photographer or license is invented. To process new replacements, update their manifest entries, run `python scripts/download-images.py`, then `python scripts/update-photo-data.py`. A fresh checkout can use the committed optimized files when local upload originals are absent.

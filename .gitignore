@@ -8,3 +8,5 @@ __pycache__/
 .npm-cache/
 
 .qr-deps/
+
+/assets/images/imagetoreplace/

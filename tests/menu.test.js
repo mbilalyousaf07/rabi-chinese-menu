@@ -40,11 +40,17 @@ test('every dish has a distinct photograph with mobile copy and complete license
  for(const dish of dishes){
   assert.ok(fs.existsSync(dish.imageSmall));assert.match(dish.imageAlt,/Representative/);
   const credit=credits.find(c=>c.itemId===dish.id);assert.ok(credit,dish.name);
-  for(const field of ['source','download','license','licenseName','creator','changes'])assert.ok(credit[field],dish.name+' '+field);
-  assert.match(credit.license,/^https:\/\//);
-  assert.ok(!/by-nc|by-nd/.test(credit.license),'All selected images permit commercial adaptation');
+  for(const field of ['source','licenseName','creator','changes'])assert.ok(credit[field],dish.name+' '+field);
+  if(credit.sourceType==='user-supplied'){
+   assert.equal(credit.license,null);assert.ok(credit.sourcePath);assert.match(credit.sourceSha256,/^[a-f0-9]{64}$/);
+   assert.equal(credit.sourcePath.split('/').at(-1).replace(/-small(?=\.[^.]+$)/,'').split('.')[0],dish.id);
+   assert.ok(dish.image.includes(credit.sourceSha256.slice(0,8)));
+  }else{
+   assert.ok(credit.download);assert.match(credit.license,/^https:\/\//);
+   assert.ok(!/by-nc|by-nd/.test(credit.license),'Stock images must permit commercial adaptation');
+  }
  }
- assert.equal(new Set(credits.filter(c=>c.itemId!=='hero').map(c=>c.download)).size,46);
+ assert.equal(new Set(credits.filter(c=>c.itemId!=='hero').map(c=>c.sourcePath||c.download)).size,46);
  assert.equal(new Set(data.deals.map(d=>d.imageGallery.map(i=>i.image).join('|'))).size,6);
  for(const deal of data.deals)for(const photo of deal.imageGallery){assert.ok(dishes.some(d=>d.id===photo.itemId&&d.image===photo.image));}
  assert.equal(new Set(dishes.filter(i=>/Soup$/.test(i.name)).map(i=>i.image)).size,3);

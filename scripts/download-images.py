@@ -1,4 +1,4 @@
-﻿"""Download the reviewed photo manifest, preserving source/license provenance."""
+"""Download the reviewed photo manifest, preserving source/license provenance."""
 import hashlib,io,json,urllib.request,sys
 from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
@@ -7,7 +7,14 @@ ROOT=Path(__file__).resolve().parents[1]
 manifest=json.loads((ROOT/'data/image-selections.json').read_text(encoding='utf-8'))
 cache=ROOT/'test-results/photo-sources';cache.mkdir(parents=True,exist_ok=True)
 def download(entry):
- url=entry['download'];original=cache/(hashlib.sha256(url.encode()).hexdigest()+'.jpg')
+ if entry.get('sourcePath'):
+  original=ROOT/entry['sourcePath']
+  if not original.is_file():
+   if all((ROOT/'assets/images'/entry[key]).is_file() for key in ['file','smallFile']):
+    return entry['itemId']+' (using committed images; local upload not present)'
+   raise FileNotFoundError('Missing original upload: '+entry['sourcePath'])
+ else:
+  url=entry['download'];original=cache/(hashlib.sha256(url.encode()).hexdigest()+'.jpg')
  if not original.exists():
   request=urllib.request.Request(url,headers={'User-Agent':'RabiMenuLicensedPhotos/1.0'})
   with urllib.request.urlopen(request,timeout=45) as response:content=response.read()

@@ -34,3 +34,7 @@ The permanent QR PNG is 720 ? 720 pixels and was independently decoded with ZXin
 - Original menu text, prices, variants, spicy markers and deal contents were compared against the previous deployed Git revision and are unchanged.
 - House-special recipes and a few exact regional preparations are not supplied; their visual approximations are documented per photo in `data/image-selections.json`, and the customer photo disclosure remains visible.
 - Local browser tests pass with 46 unique dish image sources, six deal panels, complete images, mobile layouts and fallback behaviour. Soup-card and deal-panel screenshots are retained under ignored `test-results/`.
+
+## Supplied replacement images ? 15 November 2026
+
+Ten uploaded files matched ten menu item IDs with no unmatched filenames. Both desktop and mobile versions were regenerated from each supplied image, with source-hash filenames for cache refresh. Referencing deal panels and credits were regenerated. User-supplied records are tested separately from stock-photo licenses. Menu text and prices remain unchanged.
