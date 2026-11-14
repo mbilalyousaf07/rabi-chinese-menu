@@ -88,6 +88,6 @@ Original uploads stay in the local ignored `assets/images/imagetoreplace/` folde
 
 ## Restaurant branches
 
-The customer-facing location section lists two branches from `restaurant.branches` in `data/menu.json`: Faisal Town and Muslim Town, Lahore. Only Faisal Town has a confirmed street address and family-hall note. Add the second branch's confirmed address to its `address` field when available; no street address or phone number has been inferred. The existing permanent URL and QR serve the restaurant menu.
+The customer-facing location section lists two branches from `restaurant.branches` in `data/menu.json`: Faisal Town and Muslim Town, Lahore. Faisal Town is at 127-G Central Flats, Opposite UBL Bank; Muslim Town is on Faiz Road, opposite Swiss Girls Hostel. The family-hall note applies to Faisal Town. Both addresses were supplied by the owner. The existing permanent URL and QR serve the restaurant menu.
 
 The confirmed restaurant enquiry number is **0329 6574787**, stored in `restaurant.phone` (international format) and `restaurant.phoneDisplay` in `data/menu.json`. The branches section offers a tap-to-call link without assigning the shared enquiry number to an unconfirmed branch-specific contact.

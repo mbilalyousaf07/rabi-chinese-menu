@@ -35,4 +35,4 @@ No text was illegible. “Fish Cracker” remains in Soup because that is where 
 
 Deployment approval does not resolve menu content questions above. Source values remain unchanged.
 
-- [x] Second branch spelling confirmed by the owner: Muslim Town, Lahore. Its street address remains unspecified.
+- [x] Second branch spelling confirmed by the owner: Muslim Town, Lahore. Full address confirmed: Faiz Road, Muslim Town, opposite Swiss Girls Hostel, Lahore.
