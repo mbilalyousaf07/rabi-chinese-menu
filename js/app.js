@@ -4,11 +4,17 @@ let menu, active = 'all';
 const el = (tag, className, text) => { const node = document.createElement(tag); if(className) node.className = className; if(text !== undefined) node.textContent = text; return node; };
 function photo(item, deal) {
  const wrap = el('div','food-photo');
- const image = el('img'); image.width=800; image.height=600; image.loading='lazy'; image.decoding='async';
- image.alt = `Representative food photograph for ${item.name}; not the restaurant’s food`;
- image.addEventListener('error', () => { const fallback=el('div','image-fallback','✦'); fallback.append(el('small','','Photo unavailable')); wrap.replaceChildren(fallback); }, {once:true});
- image.src=item.image || 'assets/images/unavailable.webp'; wrap.append(image);
- if(deal) wrap.append(el('span','deal-badge',`SERVES ${item.serves.toUpperCase()}`));
+ const photos = item.imageGallery || [{image:item.image,imageSmall:item.imageSmall,alt:item.imageAlt}];
+ if(item.imageGallery) wrap.classList.add('photo-panel','photo-panel-'+photos.length);
+ photos.forEach(entry => {
+  const image=el('img'); image.width=720; image.height=540; image.loading='lazy'; image.decoding='async';
+  image.alt=entry.alt || `Representative photograph for ${item.name}; not the restaurant's food`;
+  image.addEventListener('error',()=>{const fallback=el('div','image-fallback','\u2726');fallback.append(el('small','','Photo unavailable'));image.replaceWith(fallback);},{once:true});
+  if(entry.imageSmall){image.srcset=`${entry.imageSmall} 360w, ${entry.image} 720w`;image.sizes=item.imageGallery?'(max-width: 580px) 45vw, 200px':'(max-width: 350px) 90vw, (max-width: 580px) 45vw, (max-width: 850px) 44vw, 370px';}
+  image.src=entry.image || 'assets/images/unavailable.webp';wrap.append(image);
+ });
+ const credit=el('a','image-credit','Photo credits');credit.href=item.imageGallery?'credits.html':'credits.html#photo-'+item.id;credit.setAttribute('aria-label','Photo credits for '+item.name);wrap.append(credit);
+ if(deal)wrap.append(el('span','deal-badge',`SERVES ${item.serves.toUpperCase()}`));
  return wrap;
 }
 function card(item, deal=false) {

@@ -9,7 +9,7 @@ Owner confirmation before release:
 - [ ] **Pasta naming:** standalone menu says “Alfredo Chicken Cheese”; the deals say “Alfredo Chicken Cheese Pasta”. Both source versions are retained.
 - [ ] **Pasta Lover Deal:** source says “1x Fried Momos (6 pcs) OR Soup”, without a soup type. The website preserves the choice without inventing a soup.
 - [ ] Confirm menu is current and printed deal prices remain valid. No validity dates appear on the source.
-- [ ] Representative photography is intentionally reused for related dishes; it is not evidence of ingredients, portion sizes, or presentation. Replace with approved restaurant photography when available.
+- [ ] Each dish now has a distinct, individually selected representative photograph. Deal panels use photos of included dishes. House recipes, exact ingredients, portion sizes and presentation still require approved restaurant photography; selection approximations are documented in `data/image-selections.json`.
 
 No text was illegible. “Fish Cracker” remains in Soup because that is where the printed menu places it. Chilli icons are transcribed only where present. “Only Rice”, “Noodle”, “Starter”, “Pasta”, “Soup”, and “Gravy with Rice” are the six original categories.
 

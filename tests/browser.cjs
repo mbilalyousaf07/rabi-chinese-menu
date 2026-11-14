@@ -23,6 +23,16 @@ const server=http.createServer((req,res)=>{
  // Force all lazy assets to load to verify every card image.
  await page.locator('img').evaluateAll(images=>images.forEach(image=>image.loading='eager'));
  await page.waitForFunction(()=>[...document.images].every(i=>i.complete&&i.naturalWidth>0));
+ assert.equal(await page.locator('.photo-panel').count(),6);
+ const sources=await page.locator('.menu-group:not(.special) .food-photo img').evaluateAll(images=>images.map(i=>i.getAttribute('src')));
+ assert.equal(new Set(sources).size,46);
+ fs.mkdirSync(path.join(root,'test-results'),{recursive:true});
+ await page.locator('#category-soup').screenshot({path:path.join(root,'test-results/soup-cards.png')});
+ await page.locator('#special-deals').screenshot({path:path.join(root,'test-results/deal-panels.png')});
+ await page.locator('#special-deals .food-card').last().scrollIntoViewIfNeeded();
+ const grandPhotos=await page.locator('#special-deals .food-card').last().locator('img').evaluateAll(images=>images.map(i=>({loaded:i.complete&&i.naturalWidth>0,height:i.getBoundingClientRect().height})));
+ assert.ok(grandPhotos.length===4&&grandPhotos.every(i=>i.loaded&&i.height>50));
+ await page.locator('#special-deals .food-card').last().screenshot({path:path.join(root,'test-results/grand-deal.png')});
  await page.getByRole('button',{name:'Only Rice',exact:true}).click();assert.equal(await page.locator('.food-card').count(),9);
  await page.getByRole('searchbox').fill(' EGG ');assert.equal(await page.locator('.food-card').count(),1);assert.match(await page.locator('.food-card').innerText(),/Egg Fried Rice/);
  await page.getByRole('searchbox').fill('zzzz');await page.locator('#empty').waitFor({state:'visible'});

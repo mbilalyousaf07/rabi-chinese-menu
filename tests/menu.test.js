@@ -1,6 +1,7 @@
-﻿import test from 'node:test';
+import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
+import {createHash} from 'node:crypto';
 import {selectMenu,rupees,validMenu} from '../js/menu-utils.js';
 const data=JSON.parse(fs.readFileSync(new URL('../data/menu.json',import.meta.url),'utf8').replace(/^\uFEFF/,''));
 test('authoritative inventory and unique ids',()=>{
@@ -28,4 +29,23 @@ test('PKR formatting and real local photo assets',()=>{
  assert.equal(rupees(2260),'Rs. 2,260');
  for(const i of [...data.categories.flatMap(c=>c.items),...data.deals]){assert.ok(fs.existsSync(i.image),i.image);assert.ok(fs.statSync(i.image).size>1000);}
  assert.ok(!fs.readFileSync('index.html','utf8').includes('WhatsApp'));
+});
+
+test('every dish has a distinct photograph with mobile copy and complete license credits',()=>{
+ const dishes=data.categories.flatMap(c=>c.items);
+ const credits=JSON.parse(fs.readFileSync('data/image-credits.json','utf8'));
+ assert.equal(new Set(dishes.map(i=>i.image)).size,46);
+ const hashes=dishes.map(i=>createHash('sha256').update(fs.readFileSync(i.image)).digest('hex'));
+ assert.equal(new Set(hashes).size,46,'Different filenames must not hide identical image contents');
+ for(const dish of dishes){
+  assert.ok(fs.existsSync(dish.imageSmall));assert.match(dish.imageAlt,/Representative/);
+  const credit=credits.find(c=>c.itemId===dish.id);assert.ok(credit,dish.name);
+  for(const field of ['source','download','license','licenseName','creator','changes'])assert.ok(credit[field],dish.name+' '+field);
+  assert.match(credit.license,/^https:\/\//);
+  assert.ok(!/by-nc|by-nd/.test(credit.license),'All selected images permit commercial adaptation');
+ }
+ assert.equal(new Set(credits.filter(c=>c.itemId!=='hero').map(c=>c.download)).size,46);
+ assert.equal(new Set(data.deals.map(d=>d.imageGallery.map(i=>i.image).join('|'))).size,6);
+ for(const deal of data.deals)for(const photo of deal.imageGallery){assert.ok(dishes.some(d=>d.id===photo.itemId&&d.image===photo.image));}
+ assert.equal(new Set(dishes.filter(i=>/Soup$/.test(i.name)).map(i=>i.image)).size,3);
 });

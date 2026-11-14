@@ -1,4 +1,4 @@
-﻿const {chromium,devices}=require('@playwright/test');
+const {chromium,devices}=require('@playwright/test');
 const fs=require('fs'),assert=require('assert/strict');
 const url=process.argv[2];
 if(!url||!url.startsWith('https://'))throw new Error('Pass the deployed HTTPS URL');
@@ -12,6 +12,8 @@ if(!url||!url.startsWith('https://'))throw new Error('Pass the deployed HTTPS UR
   assert.equal(await page.locator('.special .food-card').count(),6);
   await page.locator('img').evaluateAll(images=>images.forEach(i=>i.loading='eager'));
   await page.waitForFunction(()=>[...document.images].every(i=>i.complete&&i.naturalWidth>0));
+  assert.equal(await page.locator('.photo-panel').count(),6);
+  assert.equal(new Set(await page.locator('.menu-group:not(.special) .food-photo img').evaluateAll(images=>images.map(i=>i.src))).size,46);
   await page.getByRole('button',{name:'Only Rice',exact:true}).click();assert.equal(await page.locator('.food-card').count(),9);
   await page.getByRole('searchbox').fill('egg');assert.equal(await page.locator('.food-card').count(),1);
   for(const device of ['iPhone 13','Pixel 5']){
@@ -23,6 +25,6 @@ if(!url||!url.startsWith('https://'))throw new Error('Pass the deployed HTTPS UR
    const png=await page.request.get(new URL('assets/qr/rabi-menu.png',url).href);assert.equal(png.status(),200);assert.match(png.headers()['content-type'],/image\/png/);
    const dest=await page.request.get(new URL('assets/qr/destination.txt',url).href);assert.equal((await dest.text()).trim(),url);
   }
-  assert.deepEqual(errors,[]);console.log('PASS live HTTPS: 52 menu/deal cards, six deals, all photos, search/category filters, iPhone/Android viewport layouts'+(process.argv.includes('--qr')?', downloadable QR and destination':'')+'.');
+  assert.deepEqual(errors,[]);console.log('PASS live HTTPS: 52 menu/deal cards, six deals, 46 distinct dish photos and six deal panels, search/category filters, iPhone/Android viewport layouts'+(process.argv.includes('--qr')?', downloadable QR and destination':'')+'.');
  }finally{await browser.close();}
 })().catch(e=>{console.error(e);process.exitCode=1;});

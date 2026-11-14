@@ -26,8 +26,8 @@ Open `http://localhost:8000`. Use an HTTP server: opening HTML directly with `fi
 - `index.html`, `css/style.css`, `js/app.js`: accessible presentation and safe DOM rendering, lazy-loaded images, search, category filters, error/retry states.
 - `js/menu-utils.js`: pure menu validation, search, filtering and PKR formatting shared with tests.
 - `data/menu.json`: all 46 menu entries, 49 portion prices and six complete deals. Change content here rather than in HTML.
-- `assets/images/`: optimized self-hosted WebP photos, nine files reused across related dishes. Original source JPEGs are never referenced by the website.
-- `data/image-credits.json`, `credits.html`: photo provenance, source and license links. Photos are illustrative stock, not restaurant food. Cropped and compressed under the [Pexels License](https://www.pexels.com/license/).
+- `assets/images/`: optimized self-hosted WebP photos, 46 distinct dish photos plus the header photograph, with smaller mobile versions. Original source JPEGs are never referenced by the website.
+- `data/image-credits.json`, `credits.html`: per-dish photo provenance, creator, source, selection notes and license links. Photos are representative, not restaurant food. Sources include Pexels, Flickr and the WordPress Photo Directory; each asset keeps its Pexels, CC BY, CC BY-SA or CC0 license. Adapted ShareAlike photos retain their original license.
 - `assets/qr/`: contains the permanent live-URL PNG, SVG and destination record.
 - `scripts/generate-qr.py`: local QR generator with public HTTPS validation.
 - `VERIFICATION.md`: content questions and release/device checks.
@@ -38,7 +38,7 @@ Full menu shows all deals followed by all six categories. Category buttons apply
 
 Semantic sections, labelled search/navigation, keyboard controls, visible focus, live result counts, reduced-motion support and responsive grids support accessible browsing. Failed photos show a calm “Photo unavailable” fallback; JSON failure shows retry. Text is inserted using DOM textContent, avoiding HTML execution from menu data. JavaScript is required; a noscript message explains this.
 
-System fonts avoid external font requests. Nine WebP photos total approximately 405 KB, with lazy loading, explicit dimensions and a prioritized hero image. No original menu photos, remote image hotlinks or cookies are used. Images are representative by food family, not exact recipes; only the printed menu supplies descriptions and spicy markers.
+System fonts avoid external font requests. Every dish uses a distinct 720?540 WebP photograph plus a 360?270 mobile copy, selected through responsive `srcset`. Lazy loading, explicit dimensions and a prioritized hero limit initial transfer. No original menu photos, remote image hotlinks or cookies are used. Images are individually selected for dish preparation, sauce, ingredients and food shape where source photos permit. House specials remain visual approximations because their recipes are not supplied; only the printed menu supplies descriptions and spicy markers. Each deal has a different photo panel assembled from its included dishes.
 
 ## Verification
 
@@ -74,4 +74,4 @@ The argument must be the real public deployed HTTPS URL. The script rejects HTTP
 
 ## Photo maintenance
 
-`python scripts/download-images.py` re-downloads and crops the nine selected photos; requires Pillow and network access. Credits record original source URLs and the Pexels license. The full menu is generated from JSON at runtime. `scripts/create-data.py` records the initial transcription; if you edit JSON, update/remove that script to prevent accidental overwrites.
+`data/image-selections.json` is the reviewed photo manifest: 46 distinct sources, licensing, crop settings and selection notes. `python scripts/download-images.py` downloads/crops these photos and writes full/mobile WebP copies; requires Pillow and network access. `python scripts/update-photo-data.py` updates menu image fields, deal galleries and the generated credits page. Original downloads are cached only in ignored `test-results/photo-sources/`. `scripts/create-data.py` records the initial transcription and reapplies reviewed photos; avoid running it after editing menu text/prices unless you intend to regenerate the original transcription.

@@ -1,4 +1,4 @@
-﻿import json,pathlib
+import json,pathlib
 root=pathlib.Path('.')
 categories=[]
 def category(id,name,photo,rows):
@@ -76,3 +76,8 @@ deals=[
 data={'restaurant':{'name':'Rabi Chinese','tagline':'Moments of Fire','address':'127-G Central Flats, Opposite UBL Bank, Faisal Town, Lahore'},'currency':'PKR','sources':['WhatsApp Image 2026-11-14 at 10.30.59 PM.jpeg','WhatsApp Image 2026-11-14 at 10.31.00 PM.jpeg'],'categories':categories,'deals':deals}
 (root/'data/menu.json').write_text(json.dumps(data,indent=2,ensure_ascii=False),encoding='utf-8')
 print(sum(len(c['items']) for c in categories),'items',len(categories),'categories',len(deals),'deals')
+
+# Preserve reviewed photography when the initial transcription is regenerated.
+if (root/'data/image-selections.json').exists():
+ import runpy
+ runpy.run_path(str(root/'scripts/update-photo-data.py'),run_name='__main__')

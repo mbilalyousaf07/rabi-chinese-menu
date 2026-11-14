@@ -4,12 +4,12 @@ Local verification performed on 14 November 2026. GitHub Pages publication was a
 
 ## Passed
 
-- `npm test`: four Node test groups verify the six-category/46-entry inventory, 49 portion prices, all six deal prices and original prices, unique IDs, menu validation, search/category intersection, PKR formatting and real local image files.
+- `npm test`: five Node test groups verify the six-category/46-entry inventory, 49 portion prices, all six deal prices and original prices, unique IDs, menu validation, search/category intersection, PKR formatting and real local image files.
 - `python -m unittest discover -s tests -p "test_*.py"`: two groups verify public HTTPS acceptance and rejection of localhost, private addresses, HTTP, credentials, fragments and temporary tunnel URLs.
 - `npm run test:browser`: real headless Chrome via Playwright; 52 cards, six deals, portion/PKR display, case-insensitive search, category intersection, clearing/reset, no-results, keyboard skip navigation, image loading, deliberate image failures, JSON failure/retry and repository subpath routing.
 - Responsive checks at 320, 360, 390, 393, 768, 1024 and 1440 CSS pixels; no page-level horizontal overflow. Horizontal category scrolling remains intentional.
 - iPhone 13 and Pixel 5 viewport/touch emulation in Chromium. Screenshots saved under local ignored `test-results/`. This is not physical iOS Safari testing.
-- Nine downloaded, visually inspected food photos, optimized to 403,514 bytes total (approximately 394 KiB), with documented Pexels sources and license. All card images loaded; customer pages never request original source JPEGs.
+- 46 individually selected dish photographs from distinct sources, visually reviewed. Full-size WebP copies total 1,729,950 bytes; mobile copies total 634,716 bytes. Responsive source selection and lazy loading avoid transferring every size. Every selected photo has a creator/source/license record; CC BY-SA adaptations retain their license. All card images loaded; customer pages never request original source JPEGs.
 - Zero JavaScript page errors in the normal browse/search/filter path.
 
 ## Release gates / limitations
@@ -25,3 +25,12 @@ Local verification performed on 14 November 2026. GitHub Pages publication was a
 `node tests/live.cjs https://mbilalyousaf07.github.io/rabi-chinese-menu/` passed: HTTPS 200, all 52 dish/deal cards, six deals, all photos, search/category intersection, and iPhone 13 / Pixel 5 Chromium emulation without page overflow or JavaScript errors. GitHub reported Pages build status `built`.
 
 The permanent QR PNG is 720 ? 720 pixels and was independently decoded with ZXing-C++ 3.1.1. Both PNG and SVG are included in the repository. Run the live check with `--qr` to also verify public QR download and the destination record.
+
+## Dish-specific photo update
+
+- Every one of the 46 dish cards now has a different photograph. File hashes and source URLs are distinct, so filenames do not hide repeated content.
+- Soups are visibly different: hot-and-sour broth, sweetcorn soup, and egg-drop soup. Steamed, fried and sauced momos use separate photos. The two drumstick cards also use separate photos.
+- Six distinct deal panels combine the included dish photographs. There are no invented combo serving photographs or added menu contents.
+- Original menu text, prices, variants, spicy markers and deal contents were compared against the previous deployed Git revision and are unchanged.
+- House-special recipes and a few exact regional preparations are not supplied; their visual approximations are documented per photo in `data/image-selections.json`, and the customer photo disclosure remains visible.
+- Local browser tests pass with 46 unique dish image sources, six deal panels, complete images, mobile layouts and fallback behaviour. Soup-card and deal-panel screenshots are retained under ignored `test-results/`.
