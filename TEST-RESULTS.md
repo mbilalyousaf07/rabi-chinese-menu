@@ -1,6 +1,6 @@
-﻿# Verification results
+# Verification results
 
-Local verification performed on 14 November 2026. No push, publication or deployment was performed.
+Local verification performed on 14 November 2026. GitHub Pages publication was authorized and completed on 14 November 2026.
 
 ## Passed
 
@@ -15,7 +15,13 @@ Local verification performed on 14 November 2026. No push, publication or deploy
 ## Release gates / limitations
 
 - The owner must confirm the source anomalies in `VERIFICATION.md`, especially Plain Rice Rs. 770 and the conflicting phone numbers.
-- A final permanent deployed HTTPS URL has not been supplied or approved. QR generation is implemented and URL validation tested; no final QR is generated yet.
+- Permanent HTTPS URL is now live: https://mbilalyousaf07.github.io/rabi-chinese-menu/. PNG and SVG QR files were generated after successful live checks; the PNG independently decoded to this exact URL.
 - Physical iPhone Safari, Android camera scanning, printed QR readability and real slow-network usability remain manual release checks.
 - No formal screen-reader audit or automated WCAG certification was performed. Keyboard, semantic labels, focus visibility, reduced motion and contrast were considered in implementation.
 - Browser dependencies are development-only. The live menu uses no npm packages or third-party network requests.
+
+## Live deployment verification
+
+`node tests/live.cjs https://mbilalyousaf07.github.io/rabi-chinese-menu/` passed: HTTPS 200, all 52 dish/deal cards, six deals, all photos, search/category intersection, and iPhone 13 / Pixel 5 Chromium emulation without page overflow or JavaScript errors. GitHub reported Pages build status `built`.
+
+The permanent QR PNG is 720 ? 720 pixels and was independently decoded with ZXing-C++ 3.1.1. Both PNG and SVG are included in the repository. Run the live check with `--qr` to also verify public QR download and the destination record.

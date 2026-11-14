@@ -1,4 +1,4 @@
-﻿# Menu verification checklist
+# Menu verification checklist
 
 Transcribed from both original JPEGs in `images/`. Those JPEGs are not loaded by the customer website. Six categories, 46 entries (49 portion prices), and six deals have been extracted. Prices and spelling are retained, without inferred ingredients or discounts.
 
@@ -28,6 +28,9 @@ No text was illegible. “Fish Cracker” remains in Soup because that is where 
 ## Device / release checks still needed
 
 - [ ] Owner approves the entries above.
-- [ ] Deploy only after explicit approval; confirm final public HTTPS URL including GitHub Pages repository subpath.
-- [ ] Generate QR for that permanent URL, scan on physical iPhone and Android, check framing and print size.
+- [x] User authorized deployment; permanent URL: https://mbilalyousaf07.github.io/rabi-chinese-menu/.
+- [x] Generate permanent PNG/SVG QR after live verification; independently decode PNG to verify URL.
+- [ ] Scan on physical iPhone and Android; check printed framing and size.
 - [ ] Check physical Safari/Chrome devices on a slow mobile connection. Automated emulation does not replace these checks.
+
+Deployment approval does not resolve menu content questions above. Source values remain unchanged.

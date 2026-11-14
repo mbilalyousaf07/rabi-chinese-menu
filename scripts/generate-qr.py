@@ -1,4 +1,4 @@
-﻿import argparse,ipaddress
+import argparse,ipaddress
 from pathlib import Path
 from urllib.parse import urlsplit
 
@@ -22,12 +22,15 @@ def main():
  parser=argparse.ArgumentParser(description='Create a print-ready QR code for the permanent restaurant menu URL.')
  parser.add_argument('url',type=validate_url)
  args=parser.parse_args()
- try: import qrcode
+ try:
+  import qrcode
+  import qrcode.image.svg
  except ImportError: parser.exit(1,'Install the QR dependency: python -m pip install -r scripts/requirements-qr.txt\n')
  output=Path(__file__).resolve().parents[1]/'assets'/'qr';output.mkdir(parents=True,exist_ok=True)
  qr=qrcode.QRCode(error_correction=qrcode.constants.ERROR_CORRECT_Q,box_size=16,border=4)
  qr.add_data(args.url);qr.make(fit=True)
  qr.make_image(fill_color='black',back_color='white').save(output/'rabi-menu.png')
+ qr.make_image(image_factory=qrcode.image.svg.SvgPathImage).save(output/'rabi-menu.svg')
  (output/'destination.txt').write_text(args.url+'\n',encoding='utf-8')
- print('Created assets/qr/rabi-menu.png. Scan it with both iPhone and Android before printing.')
+ print('Created assets/qr/rabi-menu.png and rabi-menu.svg. Scan it with both iPhone and Android before printing.')
 if __name__=='__main__': main()
