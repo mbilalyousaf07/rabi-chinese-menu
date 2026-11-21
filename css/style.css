@@ -11,3 +11,44 @@
 .branches .restaurant-contact{font-size:13px;color:var(--muted);margin:12px 0 0}.restaurant-contact a{display:inline-flex;align-items:center;min-height:44px;color:var(--gold);font-weight:700;letter-spacing:.5px;text-decoration:underline;text-underline-offset:4px}
 
 #menu-content{margin-top:24px}
+
+.offers {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: clamp(28px, 5vw, 56px) clamp(16px, 4vw, 48px) 0;
+}
+.offers h2 {
+  margin: 0 0 16px;
+  font-size: clamp(26px, 4vw, 38px);
+  line-height: 1.1;
+}
+.offer-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+.offer-card {
+  padding: clamp(18px, 3vw, 30px);
+  border: 1px solid #665c32;
+  border-radius: 12px;
+  background: #1c1c15;
+}
+.offer-card .offer-benefit {
+  margin: 0 0 8px;
+  color: var(--gold);
+  font-size: clamp(25px, 3.5vw, 40px);
+  font-weight: 800;
+  line-height: 1.1;
+}
+.offer-card h3 {
+  margin: 0 0 8px;
+  font-size: 17px;
+}
+.offer-card p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.5;
+}
+@media (max-width: 640px) {
+  .offer-grid { grid-template-columns: 1fr; }
+}

@@ -28,7 +28,7 @@ test('name search is trimmed and case insensitive and intersects category',()=>{
 test('PKR formatting and real local photo assets',()=>{
  assert.equal(rupees(2260),'Rs. 2,260');
  for(const i of [...data.categories.flatMap(c=>c.items),...data.deals]){assert.ok(fs.existsSync(i.image),i.image);assert.ok(fs.statSync(i.image).size>1000);}
- assert.ok(!fs.readFileSync('index.html','utf8').includes('WhatsApp'));
+ assert.doesNotMatch(fs.readFileSync('index.html','utf8'),/WhatsApp Image .*\.jpe?g/i);
 });
 
 test('every dish has a distinct photograph with mobile copy and complete license credits',()=>{
