@@ -74,12 +74,12 @@
         {
           "id": "gravy-5",
           "name": "Chicken Szechuan",
-          "image": "assets/images/gravy-5.webp",
+          "image": "assets/images/gravy-5-supplied-b05720ae.webp",
           "price": 480,
           "spicy": true,
           "description": "Served with rice.",
-          "imageSmall": "assets/images/gravy-5-small.webp",
-          "imageAlt": "Representative photograph for Chicken Szechuan; not Rabi Chinese food or serving size."
+          "imageSmall": "assets/images/gravy-5-supplied-b05720ae-small.webp",
+          "imageAlt": "Representative image for Chicken Szechuan; supplied for this menu."
         },
         {
           "id": "gravy-6",
@@ -210,18 +210,18 @@
         {
           "id": "rice-1",
           "name": "Egg Fried Rice",
-          "image": "assets/images/rice-1.webp",
+          "image": "assets/images/rice-1-supplied-0496a88a.webp",
           "price": 300,
-          "imageSmall": "assets/images/rice-1-small.webp",
-          "imageAlt": "Representative photograph for Egg Fried Rice; not Rabi Chinese food or serving size."
+          "imageSmall": "assets/images/rice-1-supplied-79a507e6-small.webp",
+          "imageAlt": "Representative image for Egg Fried Rice; supplied for this menu."
         },
         {
           "id": "rice-2",
           "name": "Vegetable Rice",
-          "image": "assets/images/rice-2.webp",
+          "image": "assets/images/rice-2-supplied-0a5d0279.webp",
           "price": 300,
-          "imageSmall": "assets/images/rice-2-small.webp",
-          "imageAlt": "Representative photograph for Vegetable Rice; not Rabi Chinese food or serving size."
+          "imageSmall": "assets/images/rice-2-supplied-0a5d0279-small.webp",
+          "imageAlt": "Representative image for Vegetable Rice; supplied for this menu."
         },
         {
           "id": "rice-3",
@@ -242,10 +242,10 @@
         {
           "id": "rice-5",
           "name": "Garlic Fried Rice",
-          "image": "assets/images/rice-5.webp",
+          "image": "assets/images/rice-5-supplied-b45dea24.webp",
           "price": 370,
-          "imageSmall": "assets/images/rice-5-small.webp",
-          "imageAlt": "Representative photograph for Garlic Fried Rice; not Rabi Chinese food or serving size."
+          "imageSmall": "assets/images/rice-5-supplied-b45dea24-small.webp",
+          "imageAlt": "Representative image for Garlic Fried Rice; supplied for this menu."
         },
         {
           "id": "rice-6",
@@ -259,10 +259,10 @@
         {
           "id": "rice-7",
           "name": "Plain Rice",
-          "image": "assets/images/rice-7.webp",
+          "image": "assets/images/rice-7-supplied-10b26a94.webp",
           "price": 770,
-          "imageSmall": "assets/images/rice-7-small.webp",
-          "imageAlt": "Representative photograph for Plain Rice; not Rabi Chinese food or serving size."
+          "imageSmall": "assets/images/rice-7-supplied-10b26a94-small.webp",
+          "imageAlt": "Representative image for Plain Rice; supplied for this menu."
         },
         {
           "id": "rice-8",
@@ -275,10 +275,10 @@
         {
           "id": "rice-9",
           "name": "Mongolian Rice",
-          "image": "assets/images/rice-9.webp",
+          "image": "assets/images/rice-9-supplied-63580ae2.webp",
           "price": 400,
-          "imageSmall": "assets/images/rice-9-small.webp",
-          "imageAlt": "Representative photograph for Mongolian Rice; not Rabi Chinese food or serving size."
+          "imageSmall": "assets/images/rice-9-supplied-63580ae2-small.webp",
+          "imageAlt": "Representative image for Mongolian Rice; supplied for this menu."
         }
       ]
     },
@@ -352,10 +352,10 @@
         {
           "id": "starter-2",
           "name": "Chicken Drumstick (3 pcs)",
-          "image": "assets/images/starter-2.webp",
+          "image": "assets/images/starter-2-supplied-b30e913d.webp",
           "price": 490,
-          "imageSmall": "assets/images/starter-2-small.webp",
-          "imageAlt": "Representative photograph for Chicken Drumstick (3 pcs); not Rabi Chinese food or serving size."
+          "imageSmall": "assets/images/starter-2-supplied-b30e913d-small.webp",
+          "imageAlt": "Representative image for Chicken Drumstick (3 pcs); supplied for this menu."
         },
         {
           "id": "starter-3",
@@ -394,7 +394,7 @@
         {
           "id": "starter-5",
           "name": "Manchurian Momos",
-          "image": "assets/images/starter-5.webp",
+          "image": "assets/images/starter-5-supplied-55926aa5.webp",
           "variants": [
             {
               "label": "6 pcs",
@@ -405,8 +405,8 @@
               "price": 900
             }
           ],
-          "imageSmall": "assets/images/starter-5-small.webp",
-          "imageAlt": "Representative photograph for Manchurian Momos; not Rabi Chinese food or serving size."
+          "imageSmall": "assets/images/starter-5-supplied-55926aa5-small.webp",
+          "imageAlt": "Representative image for Manchurian Momos; supplied for this menu."
         },
         {
           "id": "starter-6",
@@ -425,18 +425,18 @@
         {
           "id": "pasta-1",
           "name": "Alfredo Chicken Cheese",
-          "image": "assets/images/pasta-1-supplied-4ded050b.webp",
+          "image": "assets/images/pasta-1-supplied-f8e30e9c.webp",
           "price": 560,
-          "imageSmall": "assets/images/pasta-1-supplied-4ded050b-small.webp",
+          "imageSmall": "assets/images/pasta-1-supplied-f8e30e9c-small.webp",
           "imageAlt": "Representative image for Alfredo Chicken Cheese; supplied for this menu."
         },
         {
           "id": "pasta-2",
           "name": "Chicken Macaroni",
-          "image": "assets/images/pasta-2.webp",
+          "image": "assets/images/pasta-2-supplied-95e7d527.webp",
           "price": 470,
-          "imageSmall": "assets/images/pasta-2-small.webp",
-          "imageAlt": "Representative photograph for Chicken Macaroni; not Rabi Chinese food or serving size."
+          "imageSmall": "assets/images/pasta-2-supplied-95e7d527-small.webp",
+          "imageAlt": "Representative image for Chicken Macaroni; supplied for this menu."
         },
         {
           "id": "pasta-3",
@@ -515,9 +515,9 @@
         },
         {
           "itemId": "rice-7",
-          "image": "assets/images/rice-7.webp",
-          "imageSmall": "assets/images/rice-7-small.webp",
-          "alt": "Representative photograph for Plain Rice; not Rabi Chinese food or serving size."
+          "image": "assets/images/rice-7-supplied-10b26a94.webp",
+          "imageSmall": "assets/images/rice-7-supplied-10b26a94-small.webp",
+          "alt": "Representative image for Plain Rice; supplied for this menu."
         }
       ]
     },
@@ -527,7 +527,7 @@
       "serves": "1–2 persons",
       "price": 1470,
       "originalPrice": 1520,
-      "image": "assets/images/pasta-1-supplied-4ded050b.webp",
+      "image": "assets/images/pasta-1-supplied-f8e30e9c.webp",
       "items": [
         "1x Alfredo Chicken Cheese Pasta",
         "1x Chicken Macaroni",
@@ -537,15 +537,15 @@
       "imageGallery": [
         {
           "itemId": "pasta-1",
-          "image": "assets/images/pasta-1-supplied-4ded050b.webp",
-          "imageSmall": "assets/images/pasta-1-supplied-4ded050b-small.webp",
+          "image": "assets/images/pasta-1-supplied-f8e30e9c.webp",
+          "imageSmall": "assets/images/pasta-1-supplied-f8e30e9c-small.webp",
           "alt": "Representative image for Alfredo Chicken Cheese; supplied for this menu."
         },
         {
           "itemId": "pasta-2",
-          "image": "assets/images/pasta-2.webp",
-          "imageSmall": "assets/images/pasta-2-small.webp",
-          "alt": "Representative photograph for Chicken Macaroni; not Rabi Chinese food or serving size."
+          "image": "assets/images/pasta-2-supplied-95e7d527.webp",
+          "imageSmall": "assets/images/pasta-2-supplied-95e7d527-small.webp",
+          "alt": "Representative image for Chicken Macaroni; supplied for this menu."
         },
         {
           "itemId": "starter-4",
@@ -582,9 +582,9 @@
         },
         {
           "itemId": "rice-7",
-          "image": "assets/images/rice-7.webp",
-          "imageSmall": "assets/images/rice-7-small.webp",
-          "alt": "Representative photograph for Plain Rice; not Rabi Chinese food or serving size."
+          "image": "assets/images/rice-7-supplied-10b26a94.webp",
+          "imageSmall": "assets/images/rice-7-supplied-10b26a94-small.webp",
+          "alt": "Representative image for Plain Rice; supplied for this menu."
         }
       ]
     },
@@ -594,7 +594,7 @@
       "serves": "2 persons",
       "price": 1030,
       "originalPrice": 1070,
-      "image": "assets/images/gravy-5.webp",
+      "image": "assets/images/gravy-5-supplied-b05720ae.webp",
       "items": [
         "1x Chicken Szechuan (With Rice)",
         "1x Fried Momos (6 pcs)",
@@ -603,9 +603,9 @@
       "imageGallery": [
         {
           "itemId": "gravy-5",
-          "image": "assets/images/gravy-5.webp",
-          "imageSmall": "assets/images/gravy-5-small.webp",
-          "alt": "Representative photograph for Chicken Szechuan; not Rabi Chinese food or serving size."
+          "image": "assets/images/gravy-5-supplied-b05720ae.webp",
+          "imageSmall": "assets/images/gravy-5-supplied-b05720ae-small.webp",
+          "alt": "Representative image for Chicken Szechuan; supplied for this menu."
         },
         {
           "itemId": "starter-4",
@@ -615,9 +615,9 @@
         },
         {
           "itemId": "rice-7",
-          "image": "assets/images/rice-7.webp",
-          "imageSmall": "assets/images/rice-7-small.webp",
-          "alt": "Representative photograph for Plain Rice; not Rabi Chinese food or serving size."
+          "image": "assets/images/rice-7-supplied-10b26a94.webp",
+          "imageSmall": "assets/images/rice-7-supplied-10b26a94-small.webp",
+          "alt": "Representative image for Plain Rice; supplied for this menu."
         }
       ]
     },
@@ -627,7 +627,7 @@
       "serves": "2 persons",
       "price": 1200,
       "originalPrice": 1250,
-      "image": "assets/images/pasta-1-supplied-4ded050b.webp",
+      "image": "assets/images/pasta-1-supplied-f8e30e9c.webp",
       "items": [
         "1x Alfredo Chicken Cheese Pasta",
         "1x Rabi Special Chowmein",
@@ -636,8 +636,8 @@
       "imageGallery": [
         {
           "itemId": "pasta-1",
-          "image": "assets/images/pasta-1-supplied-4ded050b.webp",
-          "imageSmall": "assets/images/pasta-1-supplied-4ded050b-small.webp",
+          "image": "assets/images/pasta-1-supplied-f8e30e9c.webp",
+          "imageSmall": "assets/images/pasta-1-supplied-f8e30e9c-small.webp",
           "alt": "Representative image for Alfredo Chicken Cheese; supplied for this menu."
         },
         {
@@ -683,9 +683,9 @@
         },
         {
           "itemId": "starter-5",
-          "image": "assets/images/starter-5.webp",
-          "imageSmall": "assets/images/starter-5-small.webp",
-          "alt": "Representative photograph for Manchurian Momos; not Rabi Chinese food or serving size."
+          "image": "assets/images/starter-5-supplied-55926aa5.webp",
+          "imageSmall": "assets/images/starter-5-supplied-55926aa5-small.webp",
+          "alt": "Representative image for Manchurian Momos; supplied for this menu."
         }
       ]
     }

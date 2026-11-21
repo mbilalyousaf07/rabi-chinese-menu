@@ -43,8 +43,14 @@ test('every dish has a distinct photograph with mobile copy and complete license
   for(const field of ['source','licenseName','creator','changes'])assert.ok(credit[field],dish.name+' '+field);
   if(credit.sourceType==='user-supplied'){
    assert.equal(credit.license,null);assert.ok(credit.sourcePath);assert.match(credit.sourceSha256,/^[a-f0-9]{64}$/);
-   assert.equal(credit.sourcePath.split('/').at(-1).replace(/-small(?=\.[^.]+$)/,'').split('.')[0],dish.id);
+   const uploadItemId=path=>path.split('/').at(-1).replace(/(?:-supplied-[a-f0-9]{8})?(?:-small)?\.[^.]+$/,'');
+   assert.equal(uploadItemId(credit.sourcePath),dish.id);
    assert.ok(dish.image.includes(credit.sourceSha256.slice(0,8)));
+   if(credit.smallSourcePath){
+    assert.equal(uploadItemId(credit.smallSourcePath),dish.id);
+    assert.match(credit.smallSourceSha256,/^[a-f0-9]{64}$/);
+    assert.ok(dish.imageSmall.includes(credit.smallSourceSha256.slice(0,8)));
+   }
   }else{
    assert.ok(credit.download);assert.match(credit.license,/^https:\/\//);
    assert.ok(!/by-nc|by-nd/.test(credit.license),'Stock images must permit commercial adaptation');

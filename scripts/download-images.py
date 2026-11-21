@@ -9,10 +9,11 @@ cache=ROOT/'test-results/photo-sources';cache.mkdir(parents=True,exist_ok=True)
 def download(entry):
  if entry.get('sourcePath'):
   original=ROOT/entry['sourcePath']
-  if not original.is_file():
+  small_original=ROOT/entry.get('smallSourcePath',entry['sourcePath'])
+  if not original.is_file() or not small_original.is_file():
    if all((ROOT/'assets/images'/entry[key]).is_file() for key in ['file','smallFile']):
     return entry['itemId']+' (using committed images; local upload not present)'
-   raise FileNotFoundError('Missing original upload: '+entry['sourcePath'])
+   raise FileNotFoundError('Missing original upload: '+str(original if not original.is_file() else small_original))
  else:
   url=entry['download'];original=cache/(hashlib.sha256(url.encode()).hexdigest()+'.jpg')
  if not original.exists():
@@ -25,7 +26,11 @@ def download(entry):
   w,h=image.size;image=image.crop(tuple(int(v*(w if n%2==0 else h)) for n,v in enumerate(crop)))
  image=ImageOps.fit(image,(720,540),centering=tuple(entry.get('centering',[0.5,0.5])))
  image.save(ROOT/'assets/images'/entry['file'],'WEBP',quality=78,method=6)
- image.resize((360,270),Image.Resampling.LANCZOS).save(ROOT/'assets/images'/entry['smallFile'],'WEBP',quality=76,method=6)
+ small=image.resize((360,270),Image.Resampling.LANCZOS)
+ if entry.get('smallSourcePath'):
+  with Image.open(small_original) as uploaded:
+   small=ImageOps.fit(ImageOps.exif_transpose(uploaded).convert('RGB'),(360,270),method=Image.Resampling.LANCZOS)
+ small.save(ROOT/'assets/images'/entry['smallFile'],'WEBP',quality=76,method=6)
  return entry['itemId']
 failed=[]
 with ThreadPoolExecutor(max_workers=3) as pool:
