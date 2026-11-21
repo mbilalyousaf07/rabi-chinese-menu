@@ -16,7 +16,7 @@ for deal,group in zip(menu['deals'],ids):
  deal['image']=lookup[group[0]]['image']
  deal['imageGallery']=[{'itemId':id,'image':lookup[id]['image'],'imageSmall':lookup[id]['imageSmall'],'alt':lookup[id]['imageAlt']} for id in group]
 menu_path.write_text(json.dumps(menu,indent=2,ensure_ascii=False)+'\n',encoding='utf-8')
-hero={'itemId':'hero','dish':'Header / serving inspiration','file':'noodles.webp','title':'Noodles with Chicken','creator':'Nadin Sh','source':'https://www.pexels.com/photo/24811710/','download':'https://images.pexels.com/photos/24811710/pexels-photo-24811710.jpeg?auto=compress&cs=tinysrgb&w=900','licenseName':'Pexels License','license':'https://www.pexels.com/license/','changes':'Cropped, resized, and compressed to WebP.'}
+hero={'itemId': 'hero', 'dish': 'Homepage banner', 'file': 'main-banner.webp', 'sourceType': 'user-supplied', 'title': 'Homepage banner (supplied image)', 'creator': 'Image supplied by the restaurant owner; photographer not specified', 'source': 'assets/images/main-banner.webp', 'licenseName': 'User-supplied image; license not specified', 'license': None, 'changes': 'Cropped, resized, and compressed to WebP.'}
 credits=selections+[hero]
 (ROOT/'data/image-credits.json').write_text(json.dumps(credits,indent=2,ensure_ascii=False)+'\n',encoding='utf-8')
 escape=lambda value:html.escape(value or '',quote=True)

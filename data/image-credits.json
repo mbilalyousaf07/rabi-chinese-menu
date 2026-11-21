@@ -802,14 +802,14 @@
   },
   {
     "itemId": "hero",
-    "dish": "Header / serving inspiration",
-    "file": "noodles.webp",
-    "title": "Noodles with Chicken",
-    "creator": "Nadin Sh",
-    "source": "https://www.pexels.com/photo/24811710/",
-    "download": "https://images.pexels.com/photos/24811710/pexels-photo-24811710.jpeg?auto=compress&cs=tinysrgb&w=900",
-    "licenseName": "Pexels License",
-    "license": "https://www.pexels.com/license/",
+    "dish": "Homepage banner",
+    "file": "main-banner.webp",
+    "sourceType": "user-supplied",
+    "title": "Homepage banner (supplied image)",
+    "creator": "Image supplied by the restaurant owner; photographer not specified",
+    "source": "assets/images/main-banner.webp",
+    "licenseName": "User-supplied image; license not specified",
+    "license": null,
     "changes": "Cropped, resized, and compressed to WebP."
   }
 ]
